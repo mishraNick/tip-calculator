@@ -1,0 +1,11 @@
+.input-div {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 9fr;
+  border-radius: 0.2rem;
+  border: 2px solid transparent;
+  background-color: var(--very-light-grayish-cyan);
+}
+.input-div span {
+  color: var(--grayish-cyan);
+}/*# sourceMappingURL=input.css.map */
