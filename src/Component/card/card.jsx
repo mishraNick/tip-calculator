@@ -7,10 +7,10 @@ import rupeeImage from "../../assets/images/rupee.png";
 import { useState } from "react";
 
 const Card = () => {
-  const [bill, setBill] = useState(0);
-  const [tip, setTip] = useState(0);
-  const [peopleNumber, setPeopleNumber] = useState(0);
-  const [customInput, setCustomInput] = useState("custom");
+  const [bill, setBill] = useState("");
+  const [tip, setTip] = useState("");
+  const [peopleNumber, setPeopleNumber] = useState("");
+  const [customInput, setCustomInput] = useState("");
 
 
   const handleChange = (event) => {
@@ -33,26 +33,26 @@ const Card = () => {
     let realTip = (bill * percentTip) / 100;
     setTip(realTip);
     // setCustomInput(percentTip);
-    console.log(bill, percentTip, realTip);
+    // console.log(bill, percentTip, realTip);
   };
 
   const customTip=(tipAmount)=>{
     // let realTip = (bill * percentTip) / 100;
     setTip(tipAmount);
     setCustomInput(tipAmount);
-    console.log(bill, percentTip, realTip);
+    // console.log(bill, percentTip, realTip);
   }
 
   const resetValues = () => {
-    setBill(0);
-    setCustomInput("custom");
-    setPeopleNumber(0);
+    setBill("");
+    setCustomInput("");
+    setPeopleNumber("");
   };
 
   let perPersonTip = tip / peopleNumber;
   let perPersonAmount = bill / peopleNumber;
 
-  console.log(bill, peopleNumber, tip, perPersonTip, perPersonAmount);
+  // console.log(bill, peopleNumber, tip, perPersonTip, perPersonAmount);
 
   return (
     <div className="card">
@@ -63,6 +63,7 @@ const Card = () => {
             name="billInput"
             value={bill}
             img={rupeeImage}
+            placeholder="0"
             imgtype={true}
             onChange={handleChange}
           />
@@ -84,6 +85,7 @@ const Card = () => {
               value={customInput}
               img={rupeeImage}
               imgtype={true}
+              placeholder="Custom"
               onChange={handleChange}
             ></Input>
           </div>
@@ -97,6 +99,7 @@ const Card = () => {
             value={peopleNumber}
             img={memberImage}
             imgtype={true}
+            placeholder="0"
             onChange={handleChange}
           ></Input>
         </div>
